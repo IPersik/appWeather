@@ -9,9 +9,7 @@ import androidx.lifecycle.Observer
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.example.weather.AppState
 import com.example.weather.model.enitities.Weather
-import androidx.lifecycle.ViewModelProvider
 import com.example.weather.R
-import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.example.weather.databinding.MainFragmentBinding
 import com.google.android.material.snackbar.Snackbar
 
