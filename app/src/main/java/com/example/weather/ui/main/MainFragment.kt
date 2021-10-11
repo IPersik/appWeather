@@ -41,24 +41,30 @@ class MainFragment : Fragment() {
         }
 
         private fun renderData(appState: AppState) = with(binding) {
-            when (appState) {
-                is AppState.Success -> {
-                    val weatherData = appState.weatherData
-                    progressBar.visibility = View.GONE
-                    weatherGroup.visibility = View.VISIBLE
-                    setData(weatherData)
-                }
-                is AppState.Loading -> {
-                    weatherGroup.visibility = View.INVISIBLE
-                    progressBar.visibility = View.VISIBLE
-                }
+            val rands = (1..2).random()
+            if (rands == 2){
+                when (appState) {
                 is AppState.Error -> {
-                    progressBar.visibility = View.GONE
-                    weatherGroup.visibility = View.INVISIBLE
-                    Snackbar
-                        .make(mainView, "Error", Snackbar.LENGTH_INDEFINITE)
+                    progressBar.visibility = android.view.View.GONE
+                    weatherGroup.visibility = android.view.View.INVISIBLE
+                    com.google.android.material.snackbar.Snackbar
+                        .make(mainView, "Error", com.google.android.material.snackbar.Snackbar.LENGTH_INDEFINITE)
                         .setAction("Reload") { viewModel.getWeather() }
                         .show()
+                    }
+                }
+            } else {
+                when (appState) {
+                    is AppState.Success -> {
+                        val weatherData = appState.weatherData
+                        progressBar.visibility = View.GONE
+                        weatherGroup.visibility = View.VISIBLE
+                        setData(weatherData)
+                    }
+                    is AppState.Loading -> {
+                        weatherGroup.visibility = View.INVISIBLE
+                        progressBar.visibility = View.VISIBLE
+                    }
                 }
             }
         }
