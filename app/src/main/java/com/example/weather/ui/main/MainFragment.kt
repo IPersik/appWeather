@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.example.weather.AppState
 import com.example.weather.R
 import com.example.weather.databinding.MainFragmentBinding
+import com.example.weather.experiments.showSnackBar
 import com.example.weather.model.enitities.Weather
 import com.example.weather.ui.adapters.MainFragmentAdapter
 import com.example.weather.ui.details.DetailsFragment
@@ -81,10 +82,10 @@ class MainFragment : Fragment() {
             }
             is AppState.Error -> {
                 mainFragmentLoadingLayout.visibility = View.GONE
-                Snackbar
-                    .make(binding.mainFragmentFAB, getString(R.string.error), Snackbar.LENGTH_INDEFINITE)
-                    .setAction(getString(R.string.reload)) { viewModel.getWeatherFromLocalSourceRus() }
-                    .show()
+
+                mainFragmentFAB.showSnackBar(getString(R.string.error), getString(R.string.reload)){
+                    viewModel.getWeatherFromLocalSourceRus()
+                }
             }
         }
     }

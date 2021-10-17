@@ -1,12 +1,10 @@
 package com.example.weather.model.repository
 
+import com.example.weather.model.enitities.City
 import com.example.weather.model.enitities.Weather
-import com.example.weather.model.enitities.getRussianCities
-import com.example.weather.model.enitities.getWorldCities
 
 class RepositoryImpl : Repository {
     override fun getWeatherFromServer() = Weather()
-
-    override fun getWeatherFromLocalStorageRus() = getRussianCities()
-    override fun getWeatherFromLocalStorageWorld() = getWorldCities()
+    override fun getWeatherFromLocalStorageRus() = City.getRussianCities()
+    override fun getWeatherFromLocalStorageWorld() = City.getWorldCities()
 }
