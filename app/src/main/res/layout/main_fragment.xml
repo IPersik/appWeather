@@ -24,7 +24,7 @@
         android:backgroundTint="@android:color/transparent"
         app:maxImageSize="57dp"
         android:contentDescription="@string/change_cities_list"
-        android:tint="@null"
+        app:tint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
