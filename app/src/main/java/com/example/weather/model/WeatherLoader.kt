@@ -17,14 +17,14 @@ object WeatherLoader {
             val uri = URL("https://api.weather.yandex.ru/v2/informers?lat=${lat}&lon=${lon}")
 
             lateinit var urlConnection: HttpsURLConnection
-            try {
-                urlConnection = uri.openConnection() as HttpsURLConnection
+            try { urlConnection = uri.openConnection() as HttpsURLConnection
                 urlConnection.requestMethod = "GET"
                 urlConnection.addRequestProperty(
                     "X-Yandex-API-Key", "db19a6a0-b9bf-477a-8d7c-b6f2482bb279"
                 )
                 urlConnection.readTimeout = 10000
                 val bufferedReader = BufferedReader(InputStreamReader(urlConnection.inputStream))
+                // преобразование ответа от сервера (JSON) в модель данных (WeatherDTO)
                 val lines = if(Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
                     getLinesForOld(bufferedReader)
                 } else {
@@ -40,7 +40,6 @@ object WeatherLoader {
         } catch (e: MalformedURLException) {
             e.printStackTrace()
         }
-
         return null
     }
 

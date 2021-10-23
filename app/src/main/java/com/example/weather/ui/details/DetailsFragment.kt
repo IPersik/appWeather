@@ -50,9 +50,11 @@ class DetailsFragment : Fragment() {
                             mainView.visibility = View.VISIBLE
                             temperatureValue.text = appState.weatherData[0].temperature.toString()
                             feelsLikeValue.text = appState.weatherData[0].feelsLike.toString()
+                            weatherCondition.text = appState.weatherData[0].condition
                         }
                     }
                 })
+                viewModel.loadData(it.city.lat, it.city.lon)
             }
         }
     }
@@ -64,6 +66,7 @@ class DetailsFragment : Fragment() {
 
     companion object {
         const val BUNDLE_EXTRA = "weather"
+
         fun newInstance(bundle: Bundle): DetailsFragment {
             val fragment = DetailsFragment()
             fragment.arguments = bundle
