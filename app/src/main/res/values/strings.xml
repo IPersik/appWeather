@@ -14,4 +14,6 @@
 
     <string name="in_main_thread">В главном потоке</string>
     <string name="history">История</string>
+    <string name="content_provider">Content provider</string>
+    <string name="need_permissions_to_read_contacts">Необходимо предоставить разрешение для чтения контактов</string>
 </resources>
