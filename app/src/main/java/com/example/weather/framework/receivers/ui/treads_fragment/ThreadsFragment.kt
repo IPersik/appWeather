@@ -1,15 +1,7 @@
-package com.example.weather.ui
+package com.example.weather.framework.receivers.ui.treads_fragment
 
-import android.content.BroadcastReceiver
-import android.content.ComponentName
-import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
-import android.content.ServiceConnection
-import android.os.Bundle
-import android.os.Handler
-import android.os.HandlerThread
-import android.os.IBinder
+import android.content.*
+import android.os.*
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +10,7 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
 import com.example.weather.R
 import com.example.weather.databinding.FragmentThreadsBinding
+import com.example.weather.experiments.services.ServiceWithThread
 import com.example.weather.services.BoundService
 import com.example.weather.services.MyForegroundService
 import kotlinx.coroutines.*
@@ -130,6 +123,7 @@ class ThreadsFragment : Fragment(), CoroutineScope by MainScope() {
     }
 
     companion object {
+        @JvmStatic
         fun newInstance() = ThreadsFragment()
     }
 }

@@ -1,4 +1,4 @@
-package com.example.weather.model.rest_entities
+package com.example.weather.model.rest.rest_entities
 
 import com.google.gson.annotations.SerializedName
 
@@ -7,7 +7,5 @@ data class FactDTO(
 
     @SerializedName("feels_like")
     val feelsLike: Int?,
-
-
     val condition: String?
 )

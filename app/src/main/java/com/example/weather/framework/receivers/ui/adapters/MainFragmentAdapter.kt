@@ -1,4 +1,4 @@
-package com.example.weather.ui.adapters
+package com.example.weather.framework.receivers.ui.adapters
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weather.databinding.FragmentMainRecyclerItemBinding
 import com.example.weather.model.enitities.Weather
-import com.example.weather.ui.main.MainFragment
+import com.example.weather.framework.receivers.ui.main.MainFragment
 
 class MainFragmentAdapter(private val itemClickListener: MainFragment.OnItemViewClickListener)
     : RecyclerView.Adapter<MainFragmentAdapter.MainViewHolder>() {

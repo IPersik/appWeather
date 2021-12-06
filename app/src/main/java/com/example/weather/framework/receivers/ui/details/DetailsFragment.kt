@@ -1,4 +1,4 @@
-package com.example.weather.ui.details
+package com.example.weather.framework.receivers.ui.details
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import coil.load
 import coil.transform.GrayscaleTransformation
-import com.example.weather.AppState
+import com.example.weather.model.AppState
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.example.weather.model.enitities.Weather
 import com.example.weather.R

@@ -1,4 +1,4 @@
-package com.example.weather.ui.contacts_fragment
+package com.example.weather.framework.receivers.ui.contacts_fragment
 
 import android.Manifest
 import android.annotation.SuppressLint

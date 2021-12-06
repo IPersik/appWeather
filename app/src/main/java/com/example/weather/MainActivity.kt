@@ -5,11 +5,10 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
-import com.example.weather.ui.ThreadsFragment
-import com.example.weather.ui.contacts_fragment.ContactsFragment
-import com.example.weather.ui.details.DetailsFragment
-import com.example.weather.ui.history.HistoryFragment
-import com.example.weather.ui.main.MainFragment
+import com.example.weather.framework.receivers.ui.treads_fragment.ThreadsFragment
+import com.example.weather.framework.receivers.ui.contacts_fragment.ContactsFragment
+import com.example.weather.framework.receivers.ui.history.HistoryFragment
+import com.example.weather.framework.receivers.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,6 +1,6 @@
 package com.example.weather.model.rest
 
-import com.example.weather.model.rest_entities.WeatherDTO
+import com.example.weather.model.rest.rest_entities.WeatherDTO
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query

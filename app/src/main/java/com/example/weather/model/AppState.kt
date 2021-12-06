@@ -1,4 +1,4 @@
-package com.example.weather
+package com.example.weather.model
 
 import com.example.weather.model.enitities.Weather
 

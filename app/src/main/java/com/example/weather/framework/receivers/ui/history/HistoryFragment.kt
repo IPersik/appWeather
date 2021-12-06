@@ -1,15 +1,15 @@
-package com.example.weather.ui.history
+package com.example.weather.framework.receivers.ui.history
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.weather.AppState
+import com.example.weather.model.AppState
 import com.example.weather.R
 import com.example.weather.databinding.FragmentHistiryBinding
 import com.example.weather.experiments.showSnackBar
-import com.example.weather.ui.adapters.HistoryAdapter
+import com.example.weather.framework.receivers.ui.adapters.HistoryAdapter
 import org.koin.android.ext.android.inject
 
 class HistoryFragment : Fragment() {
@@ -54,10 +54,8 @@ class HistoryFragment : Fragment() {
                 progressBar.visibility = View.GONE
                 historyFragmentRecyclerview.showSnackBar(
                     getString(R.string.error),
-                    getString(R.string.reload),
-                    action = {
-                        viewModel.getAllHistory()
-                    })
+                    getString(R.string.reload)
+                )
             }
         }
     }

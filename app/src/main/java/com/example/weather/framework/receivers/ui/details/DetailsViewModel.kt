@@ -1,10 +1,10 @@
-package com.example.weather.ui.details
+package com.example.weather.framework.receivers.ui.details
 
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.weather.AppState
+import com.example.weather.model.AppState
 import com.example.weather.model.enitities.City
 import com.example.weather.model.repository.Repository
 import kotlinx.coroutines.Dispatchers

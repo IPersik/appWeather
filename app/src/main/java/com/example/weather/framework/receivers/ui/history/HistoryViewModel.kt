@@ -1,9 +1,9 @@
-package com.example.weather.ui.history
+package com.example.weather.framework.receivers.ui.history
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.weather.AppState
+import com.example.weather.model.AppState
 import com.example.weather.model.repository.Repository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

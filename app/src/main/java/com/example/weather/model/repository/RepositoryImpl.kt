@@ -5,6 +5,8 @@ import com.example.weather.model.database.Database
 import com.example.weather.model.database.HistoryEntity
 import com.example.weather.model.enitities.City
 import com.example.weather.model.enitities.Weather
+import com.example.weather.model.enitities.getRussianCities
+import com.example.weather.model.enitities.getWorldCities
 import com.example.weather.model.rest.WeatherRepo
 
 class RepositoryImpl : Repository {
@@ -16,8 +18,8 @@ class RepositoryImpl : Repository {
             condition = dto?.fact?.condition,
         )
     }
-    override fun getWeatherFromLocalStorageRus() = City.getRussianCities()
-    override fun getWeatherFromLocalStorageWorld() = City.getWorldCities()
+    override fun getWeatherFromLocalStorageRus() = getRussianCities()
+    override fun getWeatherFromLocalStorageWorld() = getWorldCities()
 
     override fun saveEntity(weather: Weather) {
         Database.db.historyDao().insert(convertWeatherToEntity(weather))
@@ -37,7 +39,7 @@ class RepositoryImpl : Repository {
     private fun convertWeatherToEntity(weather: Weather): HistoryEntity {
         return HistoryEntity(
             0, weather.city.city,
-            weather.temperature,
+            weather.temperature ?: 0,
             weather.condition ?: ""
         )
     }
