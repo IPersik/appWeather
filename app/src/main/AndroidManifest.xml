@@ -23,30 +23,33 @@
             android:authorities="geekbrains.provider"
             android:enabled="true"
             android:exported="true" />
-        <activity
-            android:name=".MainActivity">
+
+        <activity android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <service
-                android:name=".experiments.services.MyForegroundService"
-                android:enabled="true"
-                android:foregroundServiceType="location" />
-            <service
-                android:name=".experiments.services.ServiceWithThread"
-                android:enabled="true"
-                android:permission="android.permission.BIND_JOB_SERVICE" />
-            <service
-                android:name=".experiments.services.UsualService"
-                android:enabled="true" />
-
-            <receiver android:name=".framework.receivers.MainBroadcastReceiver">
-                <intent-filter>
-                    <action android:name="android.intent.action.LOCALE_CHANGED" />
-                </intent-filter>
-            </receiver>
         </activity>
+
+        <service
+            android:name=".experiments.services.MyForegroundService"
+            android:enabled="true"
+            android:foregroundServiceType="location" />
+        <service
+            android:name=".experiments.services.ServiceWithThread"
+            android:enabled="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name=".experiments.services.UsualService"
+            android:enabled="true" />
+
+        <receiver android:name=".framework.receivers.MainBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.LOCALE_CHANGED" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

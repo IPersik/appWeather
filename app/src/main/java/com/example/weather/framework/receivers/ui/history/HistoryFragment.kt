@@ -34,11 +34,6 @@ class HistoryFragment : Fragment() {
         viewModel.getAllHistory()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
     private fun renderData(appState: AppState) = with(binding) {
         when (appState) {
             is AppState.Success -> {
@@ -51,13 +46,21 @@ class HistoryFragment : Fragment() {
                 progressBar.visibility = View.VISIBLE
             }
             is AppState.Error -> {
+                historyFragmentRecyclerview.visibility = View.VISIBLE
                 progressBar.visibility = View.GONE
                 historyFragmentRecyclerview.showSnackBar(
                     getString(R.string.error),
-                    getString(R.string.reload)
-                )
+                    getString(R.string.reload),
+                    {
+                        viewModel.getAllHistory()
+                    })
             }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     companion object {

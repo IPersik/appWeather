@@ -241,13 +241,13 @@ class MainFragment : Fragment(), CoroutineScope by MainScope() {
                 mainFragmentLoadingLayout.visibility = View.VISIBLE
             }
             is AppState.Error -> {
-
                 mainFragmentLoadingLayout.visibility = View.GONE
 
                 mainFragmentFAB.showSnackBar(
                     getString(R.string.error),
-                    getString(R.string.reload)
-                ) { viewModel.getWeatherFromLocalSourceRus() }
+                    getString(R.string.reload),
+                    { viewModel.getWeatherFromLocalSourceRus() }
+                )
             }
         }
     }
