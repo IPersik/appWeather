@@ -12,6 +12,7 @@ class MainBroadcastReceiver : BroadcastReceiver() {
             append("Action: ${intent?.action}")
             toString().also {
                 Toast.makeText(context, it, Toast.LENGTH_LONG).show()
+                Toast.makeText
             }
         }
     }

@@ -43,4 +43,5 @@
     <string name="fab_switch_description">Переключить язык</string>
     <string name="start_service">Start service</string>
     <string name="stop_service">Stop service</string>
+    <string name="beta">Beta</string>
 </resources>
